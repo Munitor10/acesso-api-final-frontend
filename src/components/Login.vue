@@ -40,9 +40,8 @@ export default {
     async Processarlogin() {
       try{
         const response = await axios.post('https://localhost:7131/api/v1/login/autenticar', this.dadosLogin);
-        const resultado = response.data;
-        console.log(resultado);
-
+         localStorage.setItem('dados-usuario-logado',JSON.stringify(response.data));
+         
          Swet.fire({
           titule: 'login realizado com susseço',
           text: 'voce sera redirecionado',
@@ -53,7 +52,7 @@ export default {
 
         setTimeout(() => {
           this.$router.push('/home');
-        },2000);
+        },2000)
 
       }catch(error) {
         this.errorAlerta = 'Login ou senha inválidos';
