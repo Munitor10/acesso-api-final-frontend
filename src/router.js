@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/components/Login.vue';
 import Home from '@/components/Home.vue';
+import Usuarios from '@/components/Usuarios.vue'
 
 
 Vue.use(Router);
@@ -13,6 +14,9 @@ const router = new Router({
         { 
             path: "/home",
             component: Home,
+            children:[
+                { path: "usuarios", component: Usuarios },  
+            ],
             meta: { requiresAuth: true }
 
          },
