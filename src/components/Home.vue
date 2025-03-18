@@ -1,41 +1,45 @@
 <template>  
-    <div>
-    <!--nav-->
-    <nav class="navbar navibar-expand-lg navbar-dark bg-primary">
-    <div class="container">
-    <a class="navbar-brand" href="#">
-    <img src="@/assets/logo.png" class="logo"> Sistema IA
-    </a>
+  <div>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="@/assets/logo.png" class="logo"> Sistema IA
+        </a>
 
-    <div class="collapse navibar-collapse">
-    <ul class"navbar-nav">
-    <li class="nav-item dropdown">
-    <router-link class="nav-link dropdown-toggle" to="/home/usuarios">
-    Usuarios
-    </router-link>
-    </li>
-    </ul>
-    </div>
-    </div>
-   
-    <ur class="navibar-nav ml-auto">
-    <li class="nav-item">
-    <a class="nav-link text-white" href="#" @click="deslogar">
-    <i class="fa fa"></i>Sair
-    </a>
-    </li>
-    </ur>
+        <!-- Menu Usuário -->
+         <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <router-link class="nav-link dropdown-toggle"
+              to="/home/usuarios">
+              Usuários
+              </router-link>
+            </li>
+          </ul>
+         </div>
+      </div>
+      
+      <!-- Botão Sair -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#" @click="deslogar">
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Sair
+          </a>
+        </li>
+      </ul>
     </nav>
 
-    <div class="container mt-4 text-center">
-    <h2>Bem vindo, {{ nomeUsuarioLogado }}</h2>
-    </div>
-   
-    <div class="container">
-    <router-view></router-view>
+      <div class="container mt-4 text-center">
+      <h2>Bem vindo, {{ nomeUsuarioLogado }}</h2>
     </div>
 
+    <!-- Troca de forma dinamica o conteudo central com base na url -->
+    <div class="container">
+      <router-view></router-view>
     </div>
+
+  </div>
 </template>
 
 <script>   
