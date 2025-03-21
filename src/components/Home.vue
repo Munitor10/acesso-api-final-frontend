@@ -30,7 +30,7 @@
       </ul>
     </nav>
 
-      <div class="container mt-4 text-center">
+      <div v-for class="container mt-4 text-center">
       <h2>Bem vindo, {{ nomeUsuarioLogado }}</h2>
     </div>
 
@@ -49,7 +49,14 @@ export default {
             nomeUsuarioLogado:''
         };
     },
+     computed: {
+    exibirBemvindo()
+    {
+      return this.$route.path === '/home';
+    }
+  },
     mounted(){
+
         const usuarioLogado = localStorage.getItem('dados-usuario-logado');
         if (usuarioLogado){
             this.nomeUsuarioLogado = JSON.parse(usuarioLogado).nome;
