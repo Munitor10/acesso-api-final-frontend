@@ -73,8 +73,8 @@ export default {
     mounted(){
         this.carregarUsuarios();
     },
-    methods: {
-        async carregarUsuarios()
+     methods: {
+       async carregarUsuarios()
         {
             this.carregando = true;
         
@@ -91,26 +91,34 @@ export default {
                 this.carregando = false;
             } 
         },
-        async excluir(id)
+      async excluir(id)
         {
             const confirmacao = await Swal.fire({
-                titule: "Atençao",
-                text:"Voce quer deletar esse usuario?",
+                title: "Atenção",
+                text: "Você deseja excluir este usuário",
                 icon: "warning",
-                showConfirmButton: true,
-                confirmButtonText: "Sim",
-                cancelButtonText: "Nao"
+                showCancelButton: true,
+                confirmButtonText: "Sim, desejo excluir",
+                cancelButtonText: "Não"
             });
 
-            if(confirmacao.isConfirmed){
-                  try{
-                await axios.delete("https://localhost:7131/api/v1/usuarios/remover/${id}");
-                Swet.fire("Excluido !","usuario excluido com susseco","susseco");
+            if(confirmacao.isConfirmed)
+            {
+                try {
+                await axios.delete(`https://localhost:7131/api/v1/usuarios/remover/${id}`);
+                
+                Swal.fire("Excluído!", 
+                "O usuário foi removido com sucesso",
+                "success");
+
                 this.carregarUsuarios();
-            }catch (error){
-                console.log("Aleta - error","Ocorreu um erro ao excrir um usuario","error");
+            } catch (error) {
+                Swal.fire("ATenção - Erro!", 
+                "Ocorreu um erro ao excluir o usuário",
+                "error");
             }
             }
+           
         }
     }
 }
