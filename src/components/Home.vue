@@ -12,8 +12,12 @@
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <router-link class="nav-link dropdown-toggle"
-              to="/home/usuarios">
+              to="/home/usuarios" >
               Usuários
+              </router-link>
+              <router-link class="nav-link dropdown-toggle"
+               to="/home/acessos">
+              Acessos
               </router-link>
             </li>
           </ul>
@@ -30,7 +34,7 @@
       </ul>
     </nav>
 
-      <div v-for class="container mt-4 text-center">
+    <div v-if="exibirBemvindo" class="container mt-4 text-center">
       <h2>Bem vindo, {{ nomeUsuarioLogado }}</h2>
     </div>
 
