@@ -18,6 +18,9 @@
               </button>
           </div>
       </form>
+      <div class="text-center mt-2">
+        <router-link to="/recuperar-senha">Esqueci minha senha</router-link>
+      </div>
     </div>
   </div>
 </template>

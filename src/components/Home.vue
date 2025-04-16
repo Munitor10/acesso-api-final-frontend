@@ -8,22 +8,23 @@
         </a>
 
         <!-- Menu Usuário -->
-         <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <router-link class="nav-link dropdown-toggle"
-              to="/home/usuarios" >
-              Usuários
+              <router-link class="nav-link dropdown-toggle" to="/home/usuarios">
+                Usuários
               </router-link>
-              <router-link class="nav-link dropdown-toggle"
-               to="/home/acessos">
-              Acessos
+              <router-link class="nav-link dropdown-toggle" to="/home/acessos">
+                Acessos
+              </router-link>
+              <router-link class="nav-link dropdown-toggle" to="/home/comparar-imagens">
+                Comparar Imagens
               </router-link>
             </li>
           </ul>
-         </div>
+        </div>
       </div>
-      
+
       <!-- Botão Sair -->
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
