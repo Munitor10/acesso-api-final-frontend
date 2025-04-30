@@ -68,7 +68,7 @@ export default {
             this.carregando = true;
 
             try {
-                const response = await axios.get("https://localhost:7131/api/v1/acessos/listar-todos");
+                const response = await axios.get("https://localhost:7131/api/v1/usuarios/listar-todos");
 
                 setTimeout(() => {
                     this.acessos = response.data;
